@@ -1,0 +1,9 @@
+line-bot-sdk
+flask
+openai<1.0.0
+gunicorn
+flask-ngrok
+firebase
+urllib3==1.26.12
+requests==2.31 
+firebase_admin

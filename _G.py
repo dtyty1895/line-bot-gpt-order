@@ -1,0 +1,3 @@
+messages=[]
+
+menus=dict()
