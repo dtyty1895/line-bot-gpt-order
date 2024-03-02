@@ -7,7 +7,7 @@ load_dotenv()
 
 class OpenAIAgent:
     def __init__(self, model = "gpt-3.5-turbo"):
-        # openai.api_key = os.getenv('OPENAI_API_KEY')
+        openai.api_key = os.getenv('OPENAI_API_KEY')
         self.model = model
         self.system_prompt = f"你是一名麥當勞的服務生，這是麥當勞的菜單:{_G.menus}，請依照麥當勞的菜單幫顧客訂餐。舉例:我要一份漢堡，menus中的漢堡+1。"
     # def generate_responses(self, prompts):
