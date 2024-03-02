@@ -7,3 +7,4 @@ firebase
 urllib3==1.26.12
 requests==2.31 
 firebase_admin
+python-dotenv
