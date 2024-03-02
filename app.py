@@ -26,7 +26,7 @@ line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 # Channel Secret
 handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 
-@app.route("/", methods=['POST'])
+@app.route("/callback", methods=['POST'])
 def linebot():
     body = request.get_data(as_text=True)
     json_data = json.loads(body)
@@ -67,6 +67,11 @@ def linebot():
         print('error')
     return 'OK'
 
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=event.message.text))
 
 if __name__ == "__main__":
     firebaseconnect = FirebaseConnect()
